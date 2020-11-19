@@ -29,13 +29,13 @@ def print_array(array_to_use, start, finish)
     for i in start...finish
         case array_to_use[i]
         when 0 #? snow 1
-            print("* ").colorize(:color => :white, :background => :black)
+            print("* ")#.colorize(:color => :white, :background => :black)
         when 1 #? snow 2
-            print("• ").colorize(:color => :light_white, :background => :black)
+            print("• ")#.colorize(:color => :light_white, :background => :black)
         when 2 #? rain 1
-            print("/ ").colorize(:color => :blue, :background => :black)
+            print("/ ")#.colorize(:color => :blue, :background => :black)
         when 3 #? rain 2
-            print("| ").colorize(:color => :light_blue, :background => :black)
+            print("| ")#.colorize(:color => :light_blue, :background => :black)
         else
             print" "
         end
@@ -43,15 +43,15 @@ def print_array(array_to_use, start, finish)
 end
 
 def loop_in_array(array_to_use, pointer)
-    50.downto(pointer) { |i|
-        print_array(array_to_use[i], pointer, 50)
-        print_array(array_to_use[i], 0, pointer) unless pointer == 0
-        puts ""
-    }
-
     pointer.downto(0) { |j|
         print_array(array_to_use[j], pointer, 50)
         print_array(array_to_use[j], 0, pointer) unless pointer == 0
+        puts ""
+    }
+    
+    49.downto(pointer) { |i|
+        print_array(array_to_use[i], pointer, 50)
+        print_array(array_to_use[i], 0, pointer) unless pointer == 0
         puts ""
     }
 end
