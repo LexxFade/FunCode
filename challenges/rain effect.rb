@@ -1,15 +1,6 @@
 #!/usr/bin/env ruby
 require 'colorize'
 
-def fill_array(array_to_use)
-    for i in 0...50
-        for j in 0...50
-            array_to_use[i][j] = rand(10)
-        end
-    end
-    return array_to_use
-end
-
 def print_array(array_to_use, start, finish)
     for i in start...finish
         case array_to_use[i]
@@ -45,7 +36,6 @@ def main()
     rain_array = Array.new(50) do 
         Array.new(50) { rand(10) } 
     end
-    rain_array = fill_array(rain_array)
     pointer = 0
     while true
         loop_in_array(rain_array, pointer)
