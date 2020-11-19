@@ -29,13 +29,13 @@ def print_array(array_to_use, start, finish)
     for i in start...finish
         case array_to_use[i]
         when 0 #? snow 1
-            print("* ")#.colorize(:color => :white, :background => :black)
+            print "* ".colorize(:color => :white)
         when 1 #? snow 2
-            print("• ")#.colorize(:color => :light_white, :background => :black)
+            print "• ".colorize(:color => :light_white)
         when 2 #? rain 1
-            print("/ ")#.colorize(:color => :blue, :background => :black)
+            print "/ ".colorize(:color => :blue)
         when 3 #? rain 2
-            print("| ")#.colorize(:color => :light_blue, :background => :black)
+            print "| ".colorize(:color => :light_blue)
         else
             print" "
         end
