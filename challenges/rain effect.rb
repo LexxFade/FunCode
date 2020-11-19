@@ -1,21 +1,6 @@
 #!/usr/bin/env ruby
 require 'colorize'
 
-def append_arrays(array_to_use)
-    50.times {
-        array_to_use.push(Array.new)
-    }
-    return array_to_use
-end
-
-def get_array()
-    new_array = append_arrays(Array.new)
-    for i in 0...50
-        new_array[i] = append_arrays(new_array[i])
-    end
-    return new_array
-end
-
 def fill_array(array_to_use)
     for i in 0...50
         for j in 0...50
@@ -57,7 +42,9 @@ def loop_in_array(array_to_use, pointer)
 end
 
 def main()
-    rain_array = get_array()
+    rain_array = Array.new(50) do 
+        Array.new(50) { rand(10) } 
+    end
     rain_array = fill_array(rain_array)
     pointer = 0
     while true
