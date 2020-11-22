@@ -4,7 +4,7 @@ require 'gosu'
 def input_number()
     print ">>> "
     user_number = gets.chomp.to_i
-    if user_number < 10000
+    if (0...10000).include?(user_number)
         return user_number.to_s
     else
         puts "enter a valid positive number <= 9999"
